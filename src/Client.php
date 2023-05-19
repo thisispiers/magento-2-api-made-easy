@@ -18,10 +18,9 @@ namespace Ezael\Magento2;
 
     public function __construct($theurl)
     {
-        $theurl =           str_replace("http://", "", $theurl);
         $theurl =           trim($theurl, "/");
 
-        $this->url =        "http://".$theurl."/rest/V1/";
+        $this->url =        $theurl."/rest/V1/";
     }
 
     public function connect($theuser, $thepass)
@@ -40,7 +39,7 @@ namespace Ezael\Magento2;
             'Content-Length: ' . strlen($data_string))
         );
 
-        $this->token =      json_decode(curl_exec($ch));
+        $this->token =      trim(curl_exec($ch), '"');
         $this->headers =    array("Authorization: Bearer ".$this->token);
     }
 
