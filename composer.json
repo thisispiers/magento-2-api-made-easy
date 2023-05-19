@@ -1,0 +1,17 @@
+{
+    "name": "ezael/magento2",
+    "description": "A litttle PHP Class which can help using the Magento 2 REST API",
+    "type": "library",
+    "license": "GPL-3.0-only",
+    "autoload": {
+        "psr-4": {
+            "Ezael\\Magento2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ezael"
+        }
+    ],
+    "require": {}
+}
